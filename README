@@ -1,0 +1,9 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2742
+
+This is a Ruby Indentation script.
+I don't like the default indent/ruby.vim ( vim-ruby from RubyGems ).
+
+NOTE:
+  This script requires IndentAnything version 1.2.2 or above.
+  See http://www.vim.org/scripts/script.php?script_id=1839 .
+
