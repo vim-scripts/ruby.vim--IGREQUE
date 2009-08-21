@@ -17,7 +17,7 @@
 "
 "   Ruby Indentation with IndentAnything
 "
-" Version: 0.1.2
+" Version: 0.1.5
 "
 " Description:
 "  This script requires IndentAnything version 1.2.2 or above.
@@ -37,7 +37,9 @@
 "
 " History:
 "  2009.8.17: First release.
-"  2009.8.17: Fixed a simple mistake and make one of b:indentTrios better.
+"  2009.8.17: Corrected a simple mistake and make one of b:indentTrios better.
+"  2009.8.18: Fixed a bug that it indents by mistake after you type a line like "asif=1"
+"  2009.8.19: Fixed a bug which happens when you use a statement modifier.
 "
 " Known Bugs:
 "* doesn't work well when you type such a line like below.
@@ -86,10 +88,12 @@ let b:stringRE            = 'rubyString'
 
 
 "Special statement(class def do if...) and parenthesis.
-"Made the 1st
+"2009.08.19: Divided keywords into two groups:
+"  "usually used at the beginning of the line of the block( module, class, def, if, unless, while, until, case, and for )"
+"  and not so.
 let b:indentTrios = [
   \ [
-    \'^.*\(class\|def\|do\|if\|unless\|while\|until\|for\|case\|begin\)\>\([^#]*\(\<end\>\)\)\@!',
+    \'\(^\s*module\|^\s*class\|^\s*def\|\<do\|^\s*if\|^\s*unless\|^\s*while\|^\s*until\|^\s*for\|^\s*case\|^\s*begin\)\>\([^#]*\(\<end\>\)\)\@!',
     \'\<\(els\|when\|rescue\|ensure\)',
     \'end'
   \ ],
