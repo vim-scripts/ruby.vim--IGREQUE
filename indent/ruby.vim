@@ -17,7 +17,7 @@
 "
 "   Ruby Indentation with IndentAnything
 "
-" Version: 0.1.5
+" Version: 0.1.6
 "
 " Description:
 "  This script requires IndentAnything version 1.2.2 or above.
@@ -40,6 +40,7 @@
 "  2009.8.17: Corrected a simple mistake and make one of b:indentTrios better.
 "  2009.8.18: Fixed a bug that it indents by mistake after you type a line like "asif=1"
 "  2009.8.19: Fixed a bug which happens when you use a statement modifier.
+"  2009.11.21: Removed '*' and '/' from b:lineContList. Because '/' causes a mis-indent when using a Regexp literal.
 "
 " Known Bugs:
 "* doesn't work well when you type such a line like below.
@@ -111,7 +112,7 @@ let b:indentTrios = [
 "Operators which don't have the right-hand-side, and a backslash in the end of a statement.
 "You might want more operators in this regexp.
 let b:lineContList = [
-	\ { 'pattern' : '\(+\|-\|\*\|/\|=\|+=\|\*=\|/=\|-=\|\\\)\s*\(#.*\)\?$' },
+	\ { 'pattern' : '\(+\|-\|=\|+=\|\*=\|/=\|-=\|\\\)\s*\(#.*\)\?$' },
 \]
 
 "
